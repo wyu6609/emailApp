@@ -8,7 +8,7 @@ public class Email {
     private String password;
     private String department;
     private String email;
-    private int mailboxCapacity;
+    private int mailboxCapacity = 500;
     private int defaultPasswordLength = 10;
     private String alternateEmail;
     private String companySuffix = "aeycompany.com";
@@ -17,11 +17,11 @@ public class Email {
     public Email(String firstName, String lastName){
         this.firstName  = firstName;
         this.lastName = lastName;
-        System.out.println("EMAIL CREATED: " + this.firstName + "" + this.lastName);
+
 
         //Call a method asking for the department - return the department
         this.department = setDepartment();
-        System.out.println("Department: " + this.department);
+
 
         //Call a method that returns a random password
         this.password = randomPassword(defaultPasswordLength);
@@ -29,7 +29,6 @@ public class Email {
 
         //Combine elements to generate email
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "."+ companySuffix;
-        System.out.println("Your email is: " + email);
 
 
     }
@@ -93,7 +92,7 @@ public class Email {
 
     public String showInfo(){
         return "DISPLAY NAME: " + firstName + " " + lastName +
-                "COMPANY EMAIL: " + email +
-                "MAILBOX CAPACITY: " + mailboxCapacity + "mb";
+                "\nCOMPANY EMAIL: " + email +
+                "\nMAILBOX CAPACITY: " + mailboxCapacity + "mb";
     }
 }
